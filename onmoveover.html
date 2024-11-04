@@ -1,0 +1,50 @@
+<html>
+<head>
+     <title>Image and Text on Hover</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+        #hoverArea {
+            padding: 20px;
+            border: 2px dashed #007BFF;
+            display: inline-block;
+            cursor: pointer;
+        }
+        #displayArea {
+            margin-top: 20px;
+            display: none; /* Initially hide the display area */
+        }
+    </style>
+</head>
+<body>
+
+    <div id="hoverArea">Hover over me!</div>
+    <div id="displayArea">
+        <img id="image" src="" alt="Image will appear here" width="300" />
+        <p id="text"></p>
+    </div>
+
+    <script>
+        const hoverArea = document.getElementById('hoverArea');
+        const displayArea = document.getElementById('displayArea');
+        const image = document.getElementById('image');
+        const text = document.getElementById('text');
+
+        hoverArea.addEventListener('mouseenter', function() {
+            // Change the image source and text on mouse enter
+            image.src = 'https://www.thoughtco.com/thmb/l0Ei2qSYEp6vtU6a1o0FtphhV4s=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/SaharaDesert-58c1a5603df78c353c3d525d.jpg';
+            text.textContent = 'This is the new text that appears!';
+            displayArea.style.display = 'block'; // Show the display area
+        });
+
+        hoverArea.addEventListener('mouseleave', function() {
+            // Hide the display area on mouse leave
+            displayArea.style.display = 'none';
+        });
+    </script>
+
+</body>
+</html>
