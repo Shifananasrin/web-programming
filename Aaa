@@ -1,151 +1,122 @@
-<!DOCTYPE html>
-<html lang="en">
+
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Registration</title>
+    <title>Sign UP</title>
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
-            margin: 0;
-            padding: 0;
-        }
         .h1 {
             text-align: center;
-            font-size: 25px;
-            margin-bottom: 20px;
+            font-size: 20px;
         }
+
         .form-wrapper {
             display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
+            justify-content: center; 
+            align-items: center;     
+            min-height: 100vh;     
         }
+
         .form-container {
             width: 100%;
-            max-width: 400px;
-            padding: 20px;
+            max-width: 350px;
+            padding: 15px;
             background-color: #fff;
             border: 1px solid #ddd;
             border-radius: 5px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
-        table {
-            width: 100%;
-            margin-bottom: 20px;
-        }
-        td {
-            padding: 10px;
-            vertical-align: top;
-        }
-        label {
-            display: block;
-            margin-bottom: 5px;
-        }
-        input[type="text"],
-        input[type="email"],
-        textarea,
-        select {
-            width: 100%;
-            padding: 10px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-        }
-        input[type="radio"] {
-            margin-right: 5px;
-        }
+
+        
+
         button {
+            margin-top: 15px;
             width: 100%;
-            padding: 10px;
-            background-color: #5cb85c;
+            padding: 8px;
+            background-color: #4CAF50;
             color: white;
             border: none;
             border-radius: 5px;
+            font-size: 14px;
             cursor: pointer;
         }
+
         button:hover {
-            background-color: #4cae4c;
+            background-color: #45a049;
         }
+
+        
+
     </style>
 </head>
 <body>
 
 <div class="form-wrapper">
     <div class="form-container">
-        <div class="h1">
-            <h1>REGISTRATION</h1>
-        </div>
-        <form>
-            <h4>PERSONAL DETAILS</h4>
-            <table>
-                <tr>
-                    <td><label>FIRST NAME</label></td>
-                    <td><input type="text" name="first_name" required/></td>
-                </tr>
-                <tr>
-                    <td><label>MIDDLE NAME</label></td>
-                    <td><input type="text" name="middle_name"/></td>
-                </tr>
-                <tr>
-                    <td><label>LAST NAME</label></td>
-                    <td><input type="text" name="last_name" required/></td>
-                </tr>
-                <tr>
-                    <td><label>AGE</label></td>
-                    <td><input type="text" name="age" required/></td>
-                </tr>
-                <tr>
-                    <td><label>GENDER</label></td>
-                    <td>
-                        <label><input type="radio" name="gender" value="male" required/> MALE</label>
-                        <label><input type="radio" name="gender" value="female" required/> FEMALE</label>
-                        <label><input type="radio" name="gender" value="other"/> OTHER</label>
-                    </td>
-                </tr>
-                <tr>
-                    <td><label>PHONE NO</label></td>
-                    <td><input type="text" name="country_code" value="+91" required/></td>
-                </tr>
-                <tr>
-                    <td><label>EMAIL</label></td>
-                    <td><input type="email" name="email" required/></td>
-                </tr>
-                <tr>
-                    <td><label>ADDRESS</label></td>
-                    <td><textarea name="address" rows="5" required></textarea></td>
-                </tr>
-            </table>
+        <h2 style="text-align: center;">Sign UP</h2>
+        
+        <form id="registrationForm">
+	<table>
+	<tr>
+            <td><label for="firstName">First Name:</label></td>
+            <td><input type="text" id="firstName" name="firstName"></td><br><br><br>
+          </tr>
+	  <tr>
 
-            <h4>ACADEMIC DETAILS</h4>
-            <table>
-                <tr>
-                    <td><label>NAME OF COLLEGE</label></td>
-                    <td><input type="text" name="name_of_college" required/></td>
-                </tr>
-                <tr>
-                    <td><label>COURSE</label></td>
-                    <td>
-                        <select name="course" required>
-                            <option value="">Select Course</option>
-                            <option value="bca">BCA</option>
-                            <option value="bba">BBA</option>
-                            <option value="betech">BETECH</option>
-                            <option value="mca">MCA</option>
-                            <option value="mba">MBA</option>
-                            <option value="metech">METECH</option>    
-                        </select>
-                    </td>
-                </tr>
-                <tr>
-                    <td><label>COURSE DURATION</label></td>
-                    <td><input type="text" name="course_duration" required/></td>
-                </tr>
-            </table>
-            <button type="submit">Submit</button>
+           <td><label for="lastName">Last Name:</label></td>
+            <td><input type="text" id="lastName" name="lastName"></td><br><br><br>
+           </tr>
+	  <tr 
+
+            <td><label for="username">Username:</label></td>
+            <td><input type="text" id="username" name="username"></td><br><br><br>
+           
+		</tr>
+	  <tr 
+
+            <td><label for="password">Password:</label>
+           <td> <input type="password" id="password" name="password"></td><br><br><br>
+            </tr>
+	 
+
+	
+	  <tr 
+
+            <td><label for="confirmPassword">Confirm Password:</label></td>
+            <td><input type="password" id="confirmPassword" name="confirmPassword"></td><br><br><br>
+            </tr>
+	  <tr 
+
+            <td><label for="address">Address:</label></td>
+            <td><input type="text" id="address" name="address"></td><br><br><br>
+           </tr>
+	  <tr 
+
+            <td><label for="mobile">Mobile:</label></td>
+            <td><input type="text" id="mobile" name="mobile"></td><br><br><br>
+           
+	</tr>
+	  <tr 
+
+            
+           <td> <label>Gender:</label></td>
+            <td><input type="radio" name="gender" value="male" id="male"> Male
+            <input type="radio" name="gender" value="female" id="female"> Female
+            <input type="radio" name="gender" value="other" id="other"> Other</td><br><br><br>
+            </tr>
+	  <tr 
+
+           <td> <label for="email">Email ID:</label></td>
+            <td><input type="email" id="email" name="email"></td><br><br><br>
+           </tr>
+	  <tr 
+
+
+            <button type="button" onclick="validateForm()">Register</button>
+	</table>
         </form>
     </div>
 </div>
+
+<script src="validation.js"></script>
 
 </body>
 </html>
