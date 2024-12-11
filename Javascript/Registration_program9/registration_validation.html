@@ -1,0 +1,122 @@
+
+<html>
+<head>
+    <title>Sign UP</title>
+    <style>
+        .h1 {
+            text-align: center;
+            font-size: 20px;
+        }
+
+        .form-wrapper {
+            display: flex;
+            justify-content: center; 
+            align-items: center;     
+            min-height: 100vh;     
+        }
+
+        .form-container {
+            width: 100%;
+            max-width: 350px;
+            padding: 15px;
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        
+
+        button {
+            margin-top: 15px;
+            width: 100%;
+            padding: 8px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 14px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        
+
+    </style>
+</head>
+<body>
+
+<div class="form-wrapper">
+    <div class="form-container">
+        <h2 style="text-align: center;">Sign UP</h2>
+        
+        <form id="registrationForm">
+	<table>
+	<tr>
+            <td><label for="firstName">First Name:</label></td>
+            <td><input type="text" id="firstName" name="firstName"></td><br><br><br>
+          </tr>
+	  <tr>
+
+           <td><label for="lastName">Last Name:</label></td>
+            <td><input type="text" id="lastName" name="lastName"></td><br><br><br>
+           </tr>
+	  <tr 
+
+            <td><label for="username">Username:</label></td>
+            <td><input type="text" id="username" name="username"></td><br><br><br>
+           
+		</tr>
+	  <tr 
+
+            <td><label for="password">Password:</label>
+           <td> <input type="password" id="password" name="password"></td><br><br><br>
+            </tr>
+	 
+
+	
+	  <tr 
+
+            <td><label for="confirmPassword">Confirm Password:</label></td>
+            <td><input type="password" id="confirmPassword" name="confirmPassword"></td><br><br><br>
+            </tr>
+	  <tr 
+
+            <td><label for="address">Address:</label></td>
+            <td><input type="text" id="address" name="address"></td><br><br><br>
+           </tr>
+	  <tr 
+
+            <td><label for="mobile">Mobile:</label></td>
+            <td><input type="text" id="mobile" name="mobile"></td><br><br><br>
+           
+	</tr>
+	  <tr 
+
+            
+           <td> <label>Gender:</label></td>
+            <td><input type="radio" name="gender" value="male" id="male"> Male
+            <input type="radio" name="gender" value="female" id="female"> Female
+            <input type="radio" name="gender" value="other" id="other"> Other</td><br><br><br>
+            </tr>
+	  <tr 
+
+           <td> <label for="email">Email ID:</label></td>
+            <td><input type="email" id="email" name="email"></td><br><br><br>
+           </tr>
+	  <tr 
+
+
+            <button type="button" onclick="validateForm()">Register</button>
+	</table>
+        </form>
+    </div>
+</div>
+
+<script src="validation.js"></script>
+
+</body>
+</html>
