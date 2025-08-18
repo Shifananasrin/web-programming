@@ -1,0 +1,5 @@
+flowchart LR
+    User -->|Checks ration, complaints| RationMateApp
+    Admin -->|Posts alerts, updates status| RationMateApp
+    RationMateApp -->|Stores / retrieves| Database[(RationMateDB)]
+    Database --> RationMateApp
