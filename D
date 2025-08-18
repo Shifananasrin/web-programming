@@ -1,0 +1,26 @@
+flowchart TB
+    subgraph RationMateApp[RationMate Application]
+        P1(Login & Profile Mgmt)
+        P2(Entitlements & Schemes)
+        P3(Shop Status)
+        P4(Complaints)
+        P5(Admin Mgmt)
+    end
+
+    User -->|Login, View data, Submit complaint| P1
+    User -->|Check ration info| P2
+    User -->|Check shop| P3
+    User -->|Submit complaint| P4
+
+    Admin -->|Manage alerts, schemes, holidays| P5
+    Admin -->|Resolve complaints| P4
+
+    P1 --> Database
+    P2 --> Database
+    P3 --> Database
+    P4 --> Database
+    P5 --> Database
+    Database --> P2
+    Database --> P3
+    Database --> P4
+    Database --> P5
