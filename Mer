@@ -1,0 +1,73 @@
+erDiagram
+    USER ||--|| CARD : "owns"
+    SHOP ||--o{ USER : "serves"
+    ADMIN ||--o{ ALERT : "creates"
+    SHOP  ||--o{ ALERT : "related_to"
+    USER  ||--o{ COMPLAINT : "files"
+    ADMIN ||--o{ COMPLAINT : "handles"
+    SHOP  ||--o{ COMPLAINT : "about"
+    SHOP  }o--o{ ITEM : "stocks"
+
+    USER {
+      int user_id PK
+      string name
+      string phone
+      string language  "EN|ML"
+      int shop_id FK
+      datetime created_at
+    }
+
+    ADMIN {
+      int admin_id PK
+      string name
+      string email
+      string role
+      datetime created_at
+    }
+
+    SHOP {
+      int shop_id PK
+      string shop_name
+      string location
+      string status        "open|closed"
+      string contact
+    }
+
+    CARD {
+      string card_no PK
+      string card_type     "APL|BPL|AAY"
+      int user_id  FK
+      datetime valid_from
+      datetime valid_to
+    }
+
+    ITEM {
+      int item_id PK
+      string item_name     "rice, wheat, sugar..."
+      string unit          "kg|litre"
+      int monthly_quota
+    }
+
+    ALERT {
+      int alert_id PK
+      string title
+      string message
+      date start_date
+      date end_date
+      int admin_id FK
+      int shop_id  FK  "nullable"
+      string audience     "all|by_card_type"
+      datetime created_at
+    }
+
+    COMPLAINT {
+      int complaint_id PK
+      int user_id   FK
+      int admin_id  FK  "nullable"
+      int shop_id   FK  "nullable"
+      string subject
+      string details
+      string status       "new|in_progress|resolved|closed"
+      datetime created_at
+      datetime updated_at
+    }
