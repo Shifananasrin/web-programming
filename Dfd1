@@ -1,0 +1,46 @@
+flowchart TD
+    %% External Entities
+    U[User]
+    A[Admin]
+    G[Government]
+
+    %% Process
+    P((RationMate System))
+
+    %% Data Stores
+    D1[(User Database)]
+    D2[(Shop Database)]
+    D3[(Card Database)]
+    D4[(Item Database)]
+    D5[(Complaint Database)]
+    D6[(Alert Database)]
+
+    %% Flows
+    U -->|Login / Request Rations| P
+    U -->|Submit Complaint| P
+    U -->|View Alerts| P
+
+    A -->|Manage Users / Shops| P
+    A -->|Post Alerts| P
+    A -->|Handle Complaints| P
+
+    G -->|Update Policies / Prices| P
+
+    %% Process to Data Stores
+    P --> D1
+    P --> D2
+    P --> D3
+    P --> D4
+    P --> D5
+    P --> D6
+    D1 --> P
+    D2 --> P
+    D3 --> P
+    D4 --> P
+    D5 --> P
+    D6 --> P
+
+    %% Outputs
+    P -->|Ration Allocation / Info| U
+    P -->|Alerts| U
+    P -->|Reports| A
