@@ -1,5 +1,7 @@
 flowchart LR
     User -->|Checks ration, complaints| RationMateApp
-    Admin -->|Posts alerts, updates status| RationMateApp
+    Admin -->|Posts alerts, manages complaints| RationMateApp
+    Government -->|Provides ration data, schemes, shop info| RationMateApp
+
     RationMateApp -->|Stores / retrieves| Database[(RationMateDB)]
     Database --> RationMateApp
