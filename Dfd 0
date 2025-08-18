@@ -1,7 +1,30 @@
-flowchart LR
-    User -->|Checks ration, complaints| RationMateApp
-    Admin -->|Posts alerts, manages complaints| RationMateApp
-    Government -->|Provides ration data, schemes, shop info| RationMateApp
+flowchart TB
+    Admin[Admin] -->|Request for login| Login
+    Login -->|Response| Admin
+    Login -->|Check for login| User[User]
+    User -->|Replay| Login
 
-    RationMateApp -->|Stores / retrieves| Database[(RationMateDB)]
-    Database --> RationMateApp
+    Admin -->|View users| ViewDetails[View Faculty/Student Details]
+    ViewDetails -->|Response| Admin
+    ViewDetails -->|Request for view| User
+    User -->|Replay(userlist)| ViewDetails
+
+    Admin -->|Edit user| EditUser[Edit Student/Faculty Details]
+    EditUser -->|Response| Admin
+    EditUser -->|Request for edit| User
+    User -->|Replay| EditUser
+
+    Admin -->|Edit course| EditCourse[Edit Course Details]
+    EditCourse -->|Response| Admin
+    EditCourse -->|Request for edit| Course[Course]
+    Course -->|Replay| EditCourse
+
+    Admin -->|View course| ViewCourse[View Course Details]
+    ViewCourse -->|Response| Admin
+    ViewCourse -->|Request for view| Course
+    Course -->|Replay(courselist)| ViewCourse
+
+    Admin -->|Verify course| Verification[Verification]
+    Verification -->|Response| Admin
+    Verification -->|Request to verify| Course
+    Course -->|Replay| Verification
